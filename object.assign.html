@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object.assign</title>
+</head>
+<body>
+
+</body>
+<script>
+    /**
+     * @desc: object.assign相关操作
+    */
+    let obj1 = {a: 1, b: 2};
+    let obj2 = {b: 4};
+    let obj3 = {c: 3};
+
+    // let test = Object.assign(obj1, obj2);
+
+    // console.log(test, 1111, obj1, 22222, obj2);
+
+    // test.d = 999;
+    // console.log(test, 3333, obj1, 44444, obj2);
+
+
+    // let test = Object.assign({}, obj1);
+    // test.d = 999;
+    // console.log(test, 3333, obj1, 44444);
+
+
+    // let a = {name: 'guoxin'};
+    // let b = a;
+    // b.value = 888;
+
+    console.log(b, 77777);//undefined, 7777
+    var b = function (params) {
+    }
+
+    console.log(a, 6666);//ƒ a(params) {} 6666
+    function a(params) {
+    }
+
+    var c = 2;
+    function d(e) {
+        //此时其实就相当于在这里定义了一个var e  但是没有赋值
+        console.log(e, 888);  //undefined, 888
+        var e = 5;
+        console.log(e, 444);   //5, 444
+    }
+    console.log(d, 3333); //  整个函数块
+    d(888)
+
+    var f = 2;
+    // console.log(g, 555);//ƒ a(params) {}, 555
+    (function g() {
+        console.log(g, 999); //undefined, 999
+        var g = 4;
+        console.log(g, 888); //4, 888
+    })();
+    // console.log(g, 777); ////ƒ a(params) {}, 777
+
+
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深拷贝浅拷贝</title>
+</head>
+<body>
+
+</body>
+<script>
+    var a = 1;
+    function foo(x) {
+        var x = a;
+        console.log(x, 33333333333)//1, 3333
+        x = 2;
+        console.log(x, 4444444444)// 2,4444
+    }
+    foo(a);
+    console.log(a);//1
+
+    var a1 = 1;
+    var a2 = a1;
+    a2 = 3;
+    console.log(a1, 11111, a2)  //1, 11111, 3
+
+
+    var obj1 = {x : 1};
+    /**
+     * @desc: 浅拷贝
+    */
+    var obj2 = obj1;
+    obj2.x = 3;
+    console.log(obj1, 333, obj2)//{x:3} 333 {x:3}
+
+    /**
+     * @desc: 深拷贝
+    */
+    var obj2 = JSON.parse(JSON.stringify(obj1));
+    obj2.x = 3;
+    console.log(obj1, 11111, obj2)//深拷贝  转成了普通数据类型  所以此时是1， 11111， 3
+
+</script>
+</html>

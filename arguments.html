@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arguments</title>
+</head>
+<body>
+
+</body>
+<script>
+    /**
+     * @desc: arguments
+    */
+    function test() {
+        console.log(arguments, 999999999, arguments.length, 3333, arguments[1])
+    };
+    test(1, 2, 3);
+
+    let s = new Set(['foo', window, 1, 1, 2, 3, 4, 3]);
+    console.log(s, 6666)// {'foo', window, 1, 2, 3, 4}
+    console.log(Array.from(s), 7777);// ['foo', window, 1, 2, 3, 4]
+    // ["foo", window]
+
+    var a = [1, 2, 3, 4, 5];
+    console.log(a.reverse(), 88888888888)
+    console.log(JSON.stringify(a), 7777888)
+    var b = a.join('+')
+    console.log(b, 9688953)
+    // console.log(eval(b), 77777)
+    console.log(`哈哈哈${eval(b)}`, 58604794)
+    // var b = a.reverse();
+    // console.log(a[1], 666, b, 7777)
+
+    //数组的排序sort
+    let c = [1, 4, 3, 6, 3, 6, 7, 0, 8, 5]
+    console.log(c.sort(), 886688)
+
+    //slice
+    let d = [1, 2, 3, 4, 5]
+    console.log(d.slice(1, 4), 888889999)
+
+    //push
+    let arr = [1, 2, 3, 5]
+    let val = arr.pop()
+    console.log(arr, val, 999999)
+
+    //for of
+    let add = [1, 2, 2, 3, 5, 3, 5]
+    for(let item in add) {
+        console.log(item, 77777777777)
+    }
+</script>
+</html>

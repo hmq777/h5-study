@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for</title>
+</head>
+<style>
+    p {
+        background: yellow;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <p onclick="add(22)">这是从1+100之和<p>
+</body>
+<script>
+    // 1-100之和
+    function add(add) {
+        let i = 0;
+        for(let j=1;j<=100;j++){
+            i +=j;
+        }
+        console.log(add, i, 88888)
+    }
+    add()
+
+    // 循环对象
+    function arr() {
+        let obj = {name: 'hanmengqi', age: 18};
+        for(let i in obj) {
+            console.log(i, 111)//name, 111; age, 111
+        };
+    // 循环数组
+        let arr = [1, 2, 3, 4, 5];
+        for(let i in arr) {
+            console.log(i, 111) //i取的是下标  0, 111; 1,111...
+        };
+        for (let i of arr) {
+            console.log(i, 222)//1 222 2 222 3 222...
+        };
+
+        arr.forEach((item, index, array)=>{
+            console.log(item, index, array, 777); // 值 下标 数组
+        });
+
+
+        for (let i = 0; i < arr.length; i++) {
+            console.log(i, 3333)
+        }
+    }
+    arr()
+    // for(var i = 0; i < 10; i++) {
+    //     console.log(i, 666666) //0 666 1 666 2 666 3 666....
+    // }
+    // console.log(i, 99999)// 10 99999
+
+
+</script>
+</html>

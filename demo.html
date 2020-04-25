@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    p {
+        color: red;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    span {
+        display: inline-block;
+        width: 200px;
+        border: 1px solid skyblue;
+        background: yellow;
+    }
+    div {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        height: 600px;
+        background: azure;
+        justify-content: space-between;
+
+    }
+    div li {
+        width: 100px;
+        height: 100px;
+        background: red;
+        border: 1px solid yellow;
+        line-height: 100px;
+        text-align: center;
+    }
+</style>
+<body>
+ <p onclick="text(2222, 1)">点击事件</p>
+ <div>
+     <li>111</li>
+     <li>222</li>
+     <li>333</li>
+     <li>444</li>
+     <li>555</li>
+ </div>
+<!--<span onclick="text(1111, 2)">span点击事件</span>-->
+</body>
+<script>
+    function text(val, type) {
+        console.log(this, 999999999999)
+        let xmlHttp = new XMLHttpRequest();
+        //第二步，注册回调函数
+        xmlHttp.onreadystatechange = function() {
+            if (xmlHttp.readyState === 4)
+                if (xmlHttp.status === 200) {
+                    let responseText = JSON.parse(xmlHttp.responseText);
+                    document.querySelector('p').style.background = 'yellow';
+
+                    let elem = document.createElement("div");
+                    elem.className = 'test guoxin';
+
+                    console.log(responseText, 5555, JSON.parse(this.responseText).data.size);
+                    elem.innerHTML = responseText.data.size;
+
+                    document.querySelector('p').appendChild(elem);
+                    console.log(val, type, 77777)
+                }
+        };
+
+        // 发送请求
+        xmlHttp.open('get', 'https://wyx.jinshuizhiguan.com/api/settlement/admin/merchantslists?page=1&size=20&company=&staff=&status=', true);
+        xmlHttp.setRequestHeader('token', '2139fa37ddb8a07df293c07f59b0f84b8eef26f1');
+        xmlHttp.send();
+    }
+
+    // document.querySelector('p').onclick = function(e) {
+    //     console.log(e, 888888)
+    // }
+    function add(val) {
+    }
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>map操作</title>
+</head>
+<body>
+
+</body>
+<script>
+    /**
+     * @desc: map相关操作
+    */
+    let arr = [1, 2, 3, -1, 10, 5, 100, -100, '2w'];
+    let list = arr.map((item, index, arr) => {
+        console.log(item, 111, index, 222, arr)
+        return item >= 0 ? item : 0;
+    });
+
+    console.log(list, 4444444444)
+
+    let list1 = arr.filter((item, index, arr) => {
+        console.log(item, 111, index, 222, arr)
+        return typeof item === 'string';
+    });
+
+    console.log(list1, 55555555)
+
+</script>
+</html>
